@@ -9,6 +9,7 @@
 //	4. Insert a node at the head
 //	5. Illustration of function pointer
 //	6. Reverse the linked list
+
 struct node * (*proc_func_ptr)(int data);
 
 struct node * proc_insert_node(int data)
