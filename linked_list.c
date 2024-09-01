@@ -29,7 +29,6 @@ void proc_insert_node_pos(struct node **node, int data, int pos)
 	tmp_pos = pos;
 	printf("%d",((struct node *)*node)->next_ptr);
 	//return;
-#if 1
 	while(((struct node *)*node)->next_ptr != NULL)
 	{
 		if(pos > 1)
@@ -65,15 +64,33 @@ void proc_insert_node_pos(struct node **node, int data, int pos)
 			break;
 		}
 	}
-#endif
 }
 
-void proc_reverse_list(struct Node *node)
+struct node * proc_reverse_list(struct node *node)
 {
-	struct Node *temp1, *temp2, *temp3;
-	int i,j;
+	struct node *temp1, *temp2, *temp3;
+	int len,j;
 	
-	return node;
+	temp1 = node;							// NULL <- A <->B <-> C -> NULL
+	temp2 = node;							// NULL <- C <->B <-> A -> NULL
+	len = 0;
+	while(temp1->next_ptr != NULL)
+	{
+		temp1 = temp1->next_ptr;
+		len++;
+	}
+	temp3 = temp1;
+	temp2 = NULL;
+	while(len != 0)
+	{
+		temp1->next_ptr = temp1->prev_ptr;
+		temp1->prev_ptr = temp2;
+		temp2 = temp1;
+		temp1 = temp1->next_ptr;
+		len--;
+	}
+	temp1->next_ptr = NULL;
+	return temp3;
 }
 
 void proc_linked(void)
@@ -113,6 +130,8 @@ void proc_linked(void)
 	printf("\nEnter the data to search:");
 	scanf("%d", &data);
 
+	// Reverse the linked list 
+	head = proc_reverse_list(head);
 	// Search with Iterative Brute force method, parse through all nodes O(N)
 	temp = head;
 	printf("%d", temp->data);
