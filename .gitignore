@@ -1,7 +1,0 @@
-#ignore these set of files
-*.[oa]
-*~
-*.bat
-*.exe
-*.xlsx
-*.cmake
