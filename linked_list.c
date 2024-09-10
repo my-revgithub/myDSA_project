@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<unistd.h>
 #include "typedef.h"
 #include "linked_list.h"
 
@@ -132,7 +133,7 @@ void proc_print_list(struct node * node)
 {
 	struct node *temp;
 	temp = node;
-	printf("\tData\tNode Address\tNext Node Address Previous Node Address\n");
+	printf("\n\tData\tNode Address\t+1 Node Address -1 Node Address\n");
 	while(temp !=NULL)
 	{
 		printf("%10d\t%10d\t%10d\t%10d\n", temp->data,&temp->data,temp->next_ptr, temp->prev_ptr);
@@ -211,9 +212,9 @@ void proc_linked(void)
 	
 	//insert a node in the list
 	pos = 1;
-	proc_insert_node_pos(&head, 5, pos);
-	printf("List after inserting a node at position %d of the list\n", pos);
-	proc_print_list(head);
+	//proc_insert_node_pos(&head, 5, pos);
+	//printf("List after inserting a node at position %d of the list\n", pos);
+	//proc_print_list(head);
 	// Reverse the linked list 
 	head = proc_reverse_list(head);
 	//printf("%d\n", head);
@@ -221,11 +222,11 @@ void proc_linked(void)
 	printf("After reversing the list\n");
 	proc_print_list(head);
 	//printf("%d\n", head);
-	printf("Search in the list\n");
-	printf("Enter the data to search :");
+	//printf("Search in the list\n");
+	//printf("Enter the data to search :");
 	//data = 50;
-	scanf("%d", &data);
+	//scanf("%d", &data);
 	//printf("%d\n", head);
-	proc_search_list_method2(head,data);
+	//proc_search_list_method2(head,data);
 	
 }

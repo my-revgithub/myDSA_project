@@ -37,4 +37,12 @@ struct node
 	struct node *prev_ptr;
 };
 
+struct queue
+{
+	uint8 q_priority;
+	uint8 q_data;
+	struct queue *q_next_ptr;
+};
+
+
 #endif
