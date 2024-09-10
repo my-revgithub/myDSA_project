@@ -10,5 +10,6 @@ void main()
 	//func_queue();
 	//proc_linked_list();
 	//thread_proc();
-	proc_linked();
+	//proc_linked();
+	proc_queue();
 }
