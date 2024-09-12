@@ -139,4 +139,5 @@ void proc_queue(void)
 	queue_push(&queue, 60, 00);
 	proc_print_queue(queue);
 	printf("Data popped %d\n", queue_pop(&queue));
+	
 }

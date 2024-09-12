@@ -23,6 +23,7 @@ typedef struct
 	uint8 data;
 }list;
 
+
 typedef struct
 {
 	uint8 data[100];
@@ -42,6 +43,7 @@ struct queue
 	uint8 q_priority;
 	uint8 q_data;
 	struct queue *q_next_ptr;
+	struct queue *q_prev_ptr;
 };
 
 
