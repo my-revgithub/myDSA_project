@@ -3,7 +3,9 @@
 #include<unistd.h>
 #include "queue.h"
 
-void queue_push(struct queue **queue, uint8 data, uint8 priority)
+/*Basic Queue algorithm with Priority*/
+
+void queue_in(struct queue **queue, uint8 data, uint8 priority)
 {
 	struct queue *q, *temp;
 	q = (struct queue *) malloc(sizeof(struct queue));
@@ -31,7 +33,7 @@ void queue_push(struct queue **queue, uint8 data, uint8 priority)
 	//printf("Queued data %d", (*queue)->q_data); 
 }
 
-uint8 queue_pop(struct queue **queue)
+uint8 queue_out(struct queue **queue)
 {
 	struct queue *temp;
 	uint8 tmp_prio;
@@ -116,28 +118,28 @@ void proc_queue(void)
 {
 	struct queue *queue;
 	
-	queue_push(&queue, 10, 01); 
+	queue_in(&queue, 10, 01); 
 	//proc_print_queue(queue);
-	queue_push(&queue, 40, 02);
+	queue_in(&queue, 40, 02);
 	//proc_print_queue(queue);
-	queue_push(&queue, 60, 00);
+	queue_in(&queue, 60, 00);
 	//proc_print_queue(queue);
-	queue_push(&queue, 20, 04);
+	queue_in(&queue, 20, 04);
 	//proc_print_queue(queue);
-	queue_push(&queue, 70, 03);
+	queue_in(&queue, 70, 03);
 	
 	proc_print_queue(queue);
 	printf("Pop the contents based on the priority\n");
-	printf("Data popped %d\n", queue_pop(&queue));
+	printf("Data popped %d\n", queue_out(&queue));
 	proc_print_queue(queue);
-	printf("Data popped %d\n", queue_pop(&queue));
+	printf("Data popped %d\n", queue_out(&queue));
 	proc_print_queue(queue);
-	printf("Data popped %d\n", queue_pop(&queue));
-	queue_push(&queue, 10, 01);
+	printf("Data popped %d\n", queue_out(&queue));
+	queue_in(&queue, 10, 01);
 	proc_print_queue(queue);
-	printf("Data popped %d\n", queue_pop(&queue));
-	queue_push(&queue, 60, 00);
+	printf("Data popped %d\n", queue_out(&queue));
+	queue_in(&queue, 60, 00);
 	proc_print_queue(queue);
-	printf("Data popped %d\n", queue_pop(&queue));
+	printf("Data popped %d\n", queue_out(&queue));
 	
 }

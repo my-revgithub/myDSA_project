@@ -46,5 +46,10 @@ struct queue
 	struct queue *q_prev_ptr;
 };
 
+struct stack
+{
+	uint8 s_data;
+	struct stack *next_ptr;
+};
 
 #endif
