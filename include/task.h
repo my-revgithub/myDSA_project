@@ -18,4 +18,5 @@ extern void proc_linked(void);
 extern void proc_queue(void);
 extern void proc_print_list(struct node * node);
 extern void proc_stack(void);
+extern void proc_recursion(void);
 #endif

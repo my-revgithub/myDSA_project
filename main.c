@@ -7,5 +7,6 @@ int main()
 	//proc_linked();	
 	//proc_queue();
 	//proc_stack();
+	proc_recursion();
 	return 0;
 }
